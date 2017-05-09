@@ -5,13 +5,16 @@ app.get('/', function (req, res) {
   var userAgent = req.get("User-Agent");
   var startIndex = userAgent.indexOf("(") + 1;
   var endIndex = userAgent.indexOf(")");
-
+  var remoteAddress = req.connection.remoteAddress;
+  var remoteAddressArray = remoteAddress.split(":");
+  var remoteAddress = remoteAddressArray[remoteAddress.length - 1];
+  
   res.end(JSON.stringify({
-    "IP": req.connection.remoteAddress,
+    "IP": remoteAddress,
     "Language": req.get("Accept-Language"),
     "User": userAgent.substring(startIndex, endIndex)
   }));
-  
+
 })
 
 app.listen(process.env.PORT || 3000, function () {
