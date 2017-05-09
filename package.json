@@ -1,0 +1,15 @@
+{
+  "name": "timestamp-project",
+  "version": "1.0.0",
+  "description": "this is a project for FCC",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Leofis G.",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
